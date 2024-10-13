@@ -23,4 +23,11 @@ remote:      https://github.com/minihama/Fastcam-Project1-Board-Server/pull/new/
 remote:
 To https://github.com/minihama/Fastcam-Project1-Board-Server.git
  * [new branch]      master -> master
-    
+
+10. master가 브랜치로 생성되고 "디폴트"로 사용 안되어 확인하여 변경
+11. branch 이름을 변경 : git branch -M main
+12. 확인 : git branch
+13. git push : git push origin main <<에러 발생>>
+14. 명령어 입력 : git pull origin main --allow-unrelated-histories
+15. 다시 push : git push origin main
+16. push 확인
