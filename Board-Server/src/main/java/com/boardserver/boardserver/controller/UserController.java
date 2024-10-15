@@ -14,7 +14,7 @@ public class UserController {
     // 바로 로직을 처리 할 수 없기 때문에 서비스 단의 로직을 생성
     // userservice 는 인터페이스를 구현 할 예정임으로 imp로 작성
     private final UserServiceImp userService;
-
+    // 컨트롤러에 생성자 추가
     @Autowired
     public UserController(UserServiceImpl userService){
         this.userService = userService;

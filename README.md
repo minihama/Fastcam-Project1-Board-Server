@@ -39,18 +39,16 @@ lombok 익스텐션 설치
 사용자 API개발
 1. MVC기반으로 project 추가
 NewJAVAPackage -> controller
-
 2. 사용자 api에 대한 개발을 위한 컨트롤러 명시
 NewJAVAFile -> Class -> UserController
-
-3. userservice 를 위한 페키지 설치 
+3. userservice 를 위한 페키지 설치 (인터페이스)
 NewJAVAPackage -> service
 NewJAVAFile -> Class -> UserService (클래스는 대뮨자로)
-
 4. userdto에 사용할 패키지 설치
 NewJAVAPackage -> dto
 NewJAVAFile -> Class -> UserDTO
-
 5. 임플리먼트 패키시 설치
 NewJAVAPackage -> impl
 NewJAVAFile -> Class -> UserServiceImpl
+구현 메서드를 추가 
+6. controller에 생성자 추가
