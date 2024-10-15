@@ -2,7 +2,7 @@
 
 git 사용법 숙지
 1. git을 사용할 폴더에 가서 git init 하기
-2. git 이메일 주소 주가 : git config user.email "jesus5260@gmail.com"
+2. git 이메일 주소 주가 : git config user.email "@gmail.com"
 3. git 사용자 명 추가 :  git config user.name "minihama"
 4. git 에서 새로운 래포지토리 생성
 5. git 레포지토리 주소 추가 : git remote add origin https://github.com/minihama/Fastcam-Project1-Board-Server.git
