@@ -31,3 +31,26 @@ To https://github.com/minihama/Fastcam-Project1-Board-Server.git
 14. 명령어 입력 : git pull origin main --allow-unrelated-histories
 15. 다시 push : git push origin main
 16. push 확인
+
+lombok 익스텐션 설치
+익스텐션 검색 : lombok annotations
+
+
+사용자 API개발
+1. MVC기반으로 project 추가
+NewJAVAPackage -> controller
+
+2. 사용자 api에 대한 개발을 위한 컨트롤러 명시
+NewJAVAFile -> Class -> UserController
+
+3. userservice 를 위한 페키지 설치 
+NewJAVAPackage -> service
+NewJAVAFile -> Class -> UserService (클래스는 대뮨자로)
+
+4. userdto에 사용할 패키지 설치
+NewJAVAPackage -> dto
+NewJAVAFile -> Class -> UserDTO
+
+5. 임플리먼트 패키시 설치
+NewJAVAPackage -> impl
+NewJAVAFile -> Class -> UserServiceImpl
