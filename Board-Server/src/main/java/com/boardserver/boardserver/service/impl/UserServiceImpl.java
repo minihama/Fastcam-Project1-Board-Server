@@ -3,6 +3,7 @@ package com.boardserver.boardserver.service.impl;
 import com.boardserver.boardserver.dto.UserDTO;
 import com.boardserver.boardserver.exception.DuplicateIdException;
 import com.boardserver.boardserver.mapper.UserProfileMapper;
+import com.boardserver.boardserver.service.UserService;
 
 import lombok.extern.log4j.Log4j2;
 
