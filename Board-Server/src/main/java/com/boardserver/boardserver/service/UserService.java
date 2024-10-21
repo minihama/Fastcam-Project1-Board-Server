@@ -3,9 +3,6 @@ package com.boardserver.boardserver.service;
 import com.boardserver.boardserver.dto.UserDTO;
 
 public interface UserService {
-
-    
-} UserService {
     // userservice 는 메서드의 시그니처만 작성하고 메서드 내용은 작성 안함
 
     // user의 회원가입
