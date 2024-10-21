@@ -52,3 +52,7 @@ NewJAVAPackage -> impl
 NewJAVAFile -> Class -> UserServiceImpl
 구현 메서드를 추가 
 6. controller에 생성자 추가
+7. DB와 통신하기 위한 컨트롤러 생성
+NewJAVAPackage -> config
+NewJAVAFile -> Class -> DataBaseConfig
+NewJAVAFile -> Class -> MysqlConfig

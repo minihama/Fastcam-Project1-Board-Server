@@ -1,4 +1,4 @@
-package main.java.com.boardserver.boardserver.service;
+package com.boardserver.boardserver.service;
 
 import com.boardserver.boardserver.dto.UserDTO;
 
@@ -10,7 +10,7 @@ public class UserService {
     // 로그인
     UserDTO login(String id, String password);
     // 중복
-    boolean idDuplicatedID(String id);
+    boolean isDuplicatiedId(String id);
     // 정보
     UserDTO getUserInfo(String userId);
     // 패스워드 변경

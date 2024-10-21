@@ -1,13 +1,18 @@
-package main.java.com.boardserver.boardserver.dto;
+package com.boardserver.boardserver.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+
 @Getter
 @Setter
 @ToString
 public class UserDTO {
+
+    public static boolean hashNullDataBeforeRegister(UserDTO userDTO){
+        return userDTO.getUserId() == null || userDTO.getPassword() == null || userDTO.getNickName() == null;
+    }
 
     public enum Status{
         DEFAULT, ADMIN, DELETED
@@ -15,7 +20,7 @@ public class UserDTO {
 
     // ERD 에 작성 한 테이블 기반으로 생성
     private int id;
-    private String userID;
+    private String userId;
     private String password;
     private String nickName;
     private boolean isAdmin;
