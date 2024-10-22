@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(UserDTO userProfile){
-        boolean duplIdResult = isDuplicatiedId(userProfile.getUserId());
-        if (duplIdResult) {
+        boolean dupleIdResult = isDuplicatiedId(userProfile.getUserId());
+        if (dupleIdResult) {
             throw new DuplicateIdException("중복된 아이디입니다.");
         }
         userProfile.setCreateTime(new java.util.Date());

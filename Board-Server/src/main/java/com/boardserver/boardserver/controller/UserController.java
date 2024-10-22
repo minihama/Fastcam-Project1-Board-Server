@@ -4,17 +4,17 @@ import org.apache.tomcat.util.http.fileupload.MultipartStream.IllegalBoundaryExc
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import lombok.extern.log4j.Log4j2;
 
 import com.boardserver.boardserver.dto.UserDTO;
+import com.boardserver.boardserver.dto.request.*;
+import com.boardserver.boardserver.dto.response.*;
 import com.boardserver.boardserver.service.impl.UserServiceImpl;
+import com.boardserver.boardserver.utils.SessionUtil;
+
+import jakarta.servlet.http.HttpSession;
 
 // REST API 기반으로 만들어야 하기에 RestController을 추가
 // 실제 RequestMapping 을 통해서 controller를 통한 url에 스킴을 설계
@@ -46,7 +46,7 @@ public class UserController {
     public HttpStatus login(@RequestBody UserLoginRequest userLoginRequest, HttpSession session) {
         ResponseEntity<LoginResponse> responseEntity = null;
         String id = userLoginRequest.getUserId();
-        String pqssword = userLoginRequest.getPassword();
+        String password = userLoginRequest.getPassword();
 
         UserDTO userInfo = userService.login(id,password);
         if (userInfo == null){
@@ -54,11 +54,11 @@ public class UserController {
         }else if(userInfo != null){
             loginResponse = LoginResponse.success(userInfo);
             if (userInfo.getStatus() == (UserDTO.Status.ADMIN))
-                SessionUtil.setLoginAdminmId(session,id);
+                SessionUtil.setLoginAdminId(session,id);
                 else 
                     SessionUtil.setLoginMemberId(session,id);
 
-                    responseEntity = new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);)
+                    responseEntity = new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);
         } else {
             throw new RuntimeException("Lonin Error!  유저 정보가 없거나 지원되지 않는 유저 입니다.");
         }
@@ -74,7 +74,7 @@ public class UserController {
     }
 
     @PutMapping("logout")
-    public void logout(HttpSesson session){
+    public void logout(HttpSession session){
         SessionUtil.clear(session);
     }
 
@@ -91,7 +91,7 @@ public class UserController {
             ResponseEntity.ok(new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK));
         } catch (IllegalArgumentException e) {
             log.error("updatePassword 실패",e);
-            responseEntity = new ResponseEntity<LoginResponse>()(HttpStatus.BAD_REQUEST);
+            responseEntity = new ResponseEntity<LoginResponse>(HttpStatus.BAD_REQUEST);
         }
         return responseEntity;
     }
@@ -106,7 +106,7 @@ public class UserController {
             responseEntity = new ResponseEntity<LoginResponse>(loginResponse, HttpStatus.OK);
         } catch (RuntimeException e){
             log.error("deleteId 실패");
-            responseEntity = new ResponseEntity<LoginResponse>(HttpStstus.BAD_REQUEST);
+            responseEntity = new ResponseEntity<LoginResponse>(HttpStatus.BAD_REQUEST);
         }
         return responseEntity;
     }
