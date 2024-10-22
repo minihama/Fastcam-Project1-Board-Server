@@ -1,6 +1,5 @@
 package com.boardserver.boardserver.dto.response;
 
-import com.boardserver.boardserver.controller.UserController;
 import com.boardserver.boardserver.dto.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

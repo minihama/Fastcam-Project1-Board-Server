@@ -9,7 +9,6 @@ import lombok.extern.log4j.Log4j2;
 
 import static com.boardserver.boardserver.utils.SHA256Util.encryptSHA256;
 
-import org.apache.ibatis.jdbc.RuntimeSqlException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

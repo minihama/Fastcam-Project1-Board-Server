@@ -12,6 +12,7 @@ import lombok.ToString;
 @ToString
 public class UserDTO {
 
+    // Getter와 Setter 메서드
     public static boolean hashNullDataBeforeRegister(UserDTO userDTO){
         return userDTO.getUserId() == null || userDTO.getPassword() == null || userDTO.getNickName() == null;
     }
