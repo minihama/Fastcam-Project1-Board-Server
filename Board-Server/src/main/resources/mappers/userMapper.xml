@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatios.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.boardserver.boardserver.mapper.UserProfileMapper">
     <select id = "getUserProfile" resultType="com.boardserver.boardserver.dto.UserDTO">
-        SELECT userId,userId,password,nickName,CreateTime,isWithDraw,status
+        SELECT id,userId,password,nickName,CreateTime,isWithDraw,status
         FROM user
         WHERE userId = #{id}
     </select>

@@ -9,15 +9,15 @@ import com.boardserver.boardserver.dto.UserDTO;
 public interface UserProfileMapper {
     public UserDTO getUserProfile(@Param("id") String id); 
 
-    int insertUserProfile(@Param("id") String id ,@Param("password") String password ,@Param("name") String name ,@Param("phone") String phone ,@Param("address") String address ,@Param("createTime") String createTime ,@Param("updateTime") String updateTime);
+    int insertUserProfile(@Param("userId") String userId ,@Param("password") String password ,@Param("nickName") String nickName ,@Param("isWithDraw") String isWithDraw ,@Param("status") String status ,@Param("createTime") String createTime ,@Param("updateTime") String updateTime);
     int deleteUserProfile(@Param("id") String id);
 
     public UserDTO findByIdAndPassword(@Param("id") String id, @Param("password") String password);
 
     int idCheck(@Param("id") String id);
 
-    public int updatePassword(UserDTO user);
-    public int updateAddress(UserDTO user);
+    public int updatePassword(UserDTO userId);
+    public int updateAddress(UserDTO userId);
 
     int register(UserDTO userProfile);
 }
