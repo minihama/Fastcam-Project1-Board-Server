@@ -65,6 +65,8 @@ NewJAVAFile -> Class -> MysqlConfig
 
 =======================================================
 # mybatis-test-vscode
+
 mybatis-mysl 연동을 위한 테스트 서버 구성
 mybatis-test-vscode 동작 완료
+
 =======================================================
